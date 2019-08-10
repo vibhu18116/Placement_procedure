@@ -3,26 +3,23 @@ class Student{
 	final int roll_no;
 	final float cgpa;
 	final String branch;
-
 	private boolean placed = false;
+	private String placed_in;
 
-	class Company_Score{
+	LinkedList company_marks = new LinkedList();
 
-		final String company_name;
-		final int score_in_test;
-
-		Company_Score(String company_name, int score_in_test){
-			this.company_name = company_name;
-			this.score_in_test = score_in_test;
-		}
+	Student(int roll_no, float cgpa, String branch){
+		this.roll_no = roll_no;
+		this.cgpa = cgpa;
+		this.branch = branch;
 	}
 
-	class Companies_Applied_To{
-
-		private Company_Score first;
-
-		Companies_Applied_To(){
-			
-		}
+	void addMarks(Node techMarks){
+		company_marks.addNode(techMarks);
 	}
+
+	boolean getPlacementStatus(){
+		return placed;
+	}
+	
 }
