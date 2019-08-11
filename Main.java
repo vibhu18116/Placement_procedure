@@ -77,8 +77,12 @@ public class Main{
 	}
 
 	static void num_unplaced_students(){
-		p_cell.unplacedStudents();
+		System.out.println(p_cell.unplacedStudents() + " students left.");
 	}
+
+	static int numUnplacedStudents(){
+		return p_cell.unplacedStudents();
+	}	
 
 	static void open_companies_names(){
 		p_cell.open_companies_names();
@@ -97,7 +101,7 @@ public class Main{
 			p_cell.addStudent(cgpa, course);
 		}
 
-		while (num_unplaced_students()!=0){
+		while (numUnplacedStudents()!=0){
 			decode(sc.nextInt());
 		}
 	}
