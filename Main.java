@@ -10,10 +10,10 @@ public class Main{
 				add_company();
 				return;
 			case 2:
-				// remove_placed_students();
+				remove_placed_students();
 				return;
 			case 3:
-				// remove_closed_companies();
+				remove_closed_companies();
 				return;
 			case 4:
 				num_unplaced_students();
@@ -22,21 +22,39 @@ public class Main{
 				open_companies_names();
 				return;
 			case 6:
-				// select_students();
+				select_students();
 				return;
 			case 7:
 				company_details();
 				return;
 			case 8:
-				// student_details();
+				student_details();
 				return;
 			case 9:
-				// companiees_applied_for_and_marks();
+				companies_applied_for_and_marks();
 				return;
 			default:
 				System.out.println("Invalid query");
 				return;
 		}
+	}
+
+	static void remove_closed_companies(){
+		p_cell.remove_companies();
+	}
+
+	static void remove_placed_students(){
+		p_cell.remove_placed_students();
+	}
+
+	static void select_students(){
+		String comp_name = sc.next();
+		p_cell.select_students(comp_name);
+	}
+
+	static void student_details(){
+		int roll_num = sc.nextInt();
+		p_cell.showStudentDetails(roll_num);
 	}
 
 	static void add_company(){
@@ -51,6 +69,11 @@ public class Main{
 		int num_required_students = sc.nextInt();
 		p_cell.addCompany(c_name, courses, num_required_students);
 		
+	}
+
+	static void companies_applied_for_and_marks(){
+		int roll_num = sc.nextInt();
+		p_cell.tech_round_marks(roll_num);
 	}
 
 	static void num_unplaced_students(){
@@ -74,7 +97,7 @@ public class Main{
 			p_cell.addStudent(cgpa, course);
 		}
 
-		while (true){
+		while (num_unplaced_students()!=0){
 			decode(sc.nextInt());
 		}
 	}

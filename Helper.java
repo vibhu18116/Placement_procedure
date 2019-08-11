@@ -48,5 +48,8 @@ class LinkedList{
 		return first;
 	}
 
+	void setHead(Node n){
+		first = n;
+	}
 
 }
